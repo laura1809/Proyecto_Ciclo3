@@ -84,8 +84,4 @@ public class Tarjeta {
     public String toString() {
         return "Tarjeta{" + "id_tarjeta=" + id_tarjeta + ", nombre=" + nombre + ", categoria=" + categoria + ", precio=" + precio + ", unidades_disponibles=" + unidades_disponibles + ", descuento=" + descuento + ", codigo_canjeo=" + codigo_canjeo + '}';
     }
-    
-      
-            
-    
 }
