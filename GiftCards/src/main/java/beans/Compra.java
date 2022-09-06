@@ -38,9 +38,5 @@ public class Compra {
 
         public void setFecha_compra(Date fecha_compra) {
             this.fecha_compra = fecha_compra;
-        }
-        
-        
-        
-        
+        }   
 }

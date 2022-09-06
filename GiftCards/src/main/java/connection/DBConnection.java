@@ -33,6 +33,4 @@ public class DBConnection {
     public void desconectar(){
         connection = null;
     }
-       
-    
 }
