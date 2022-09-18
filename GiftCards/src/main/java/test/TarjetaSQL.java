@@ -66,4 +66,18 @@ public class TarjetaSQL {
             con.desconectar();
         }
     }
+    
+    //Método para eliminar los datos de una tarjeta en la BD
+    public static void eliminarTarjeta(int id_tarjeta) {
+        DBConnection con = new DBConnection();
+        String sql = "DELETE FROM tarjeta WHERE id_tarjeta="+id_tarjeta+";";
+        try {
+            Statement st = con.getConnection().createStatement();
+            st.executeUpdate(sql);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+    }
 }
