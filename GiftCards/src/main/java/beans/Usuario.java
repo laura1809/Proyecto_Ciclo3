@@ -11,14 +11,25 @@ public class Usuario {
     private String apellido;
     private String email;
     private double saldo;
+    private String cargo;
 
-    public Usuario(String username, String contrasena, String nombre, String apellido, String email, double saldo) {
+    public Usuario(String username, String contrasena, String nombre, String apellido, String email, double saldo, String cargo) {
         this.username = username;
         this.contrasena = contrasena;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.saldo = saldo;
+        this.cargo = cargo;
+        
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public String getUsername() {
@@ -68,4 +79,12 @@ public class Usuario {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "username=" + username + ", contrasena=" + contrasena + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", saldo=" + saldo + ", cargo=" + cargo + '}';
+    }
+    
+    
+    
 }
