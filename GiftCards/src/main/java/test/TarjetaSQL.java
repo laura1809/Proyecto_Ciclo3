@@ -27,8 +27,9 @@ public class TarjetaSQL {
                 int unidades_disponibles = rs.getInt("unidades_disponibles");
                 boolean descuento = rs.getBoolean("descuento");
                 String codigo_canjeo = rs.getString("codigo_canjeo");
+                String ruta_imagen = rs.getString("ruta_imagen");
 
-                Tarjeta tarjeta = new Tarjeta(id_tarjeta, nombre, categoria, precio, unidades_disponibles, descuento, codigo_canjeo);
+                Tarjeta tarjeta = new Tarjeta(id_tarjeta, nombre, categoria, precio, unidades_disponibles, descuento, codigo_canjeo,ruta_imagen);
                 System.out.println(tarjeta.toString());
             }
             st.executeQuery(sql);

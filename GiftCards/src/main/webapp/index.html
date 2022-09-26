@@ -10,7 +10,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/loginUsuario.js"></script>
-        
+  
         <link rel="shortcut icon" href="Assets/App Logo - Slate.png" type="image/x-icon">
        
         <style>
@@ -19,17 +19,20 @@
 
 
     </head>
-
+    
     <body class="bg-slate-800 font-['Roboto']">
         <main class="container flex justify-center mx-auto mt-36">
             <article id="userSign" class="w-3/4 2xl:w-1/5 xl:w-1/4 lg:w-1/3 md:w-2/5 sm:w-1/2
                      absolute rounded-t-2xl rounded-b-xl bg-sky-600">
                 <div id="topButtons" class="h-9 flex justify-between text-slate-200">
                     <div class="w-8/12 flex justify-center items-center rounded-tl-xl bg-sky-600 font-medium"> Usuario </div>
-                    <button type="button" id="button-admin" onclick="location.href = './indexAdmin.html';"
+                    <button type="button" id="button-admin" onclick="location.href = 'indexAdmin.html';"
+                            
+                            
+                           
                             class="w-5/12 rounded-tr-xl rounded-bl-lg bg-sky-800 font-medium hover:bg-sky-900 transition-colors"> Admin </button>
                 </div>
-
+           
                 <img src="Assets/App Logo - Slate.png" alt="Logo de la app" id="appLogo" width="150" height="150" class="mx-auto mt-6"/>
 
                 <form action="" id="userSignIn-form" class="mt-9">
@@ -53,11 +56,12 @@
 
                     <div id="form-createAccount" class="flex justify-center mt-8 pb-5 text-slate-200">
                         <p id="text-createAccount"> ¿Aún no tienes cuenta? </p>
-                        <button type="button" id="button-createAccount" onclick="location.href = './SignUp.html';"
-                                class="ml-2 font-semibold hover:text-sky-900"> Crea una </button>
+                        <button type="button" id="button-createAccount" onclick="location.href='SignUp.html';" 
+                        class="ml-2 font-semibold hover:text-sky-900 transition-colors"> Crea una </button>
                     </div>
                 </form>
             </article>
         </main>
     </body>
 </html>
+
