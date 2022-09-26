@@ -13,8 +13,9 @@ public class Tarjeta {
     private int unidades_disponibles;
     private boolean descuento;
     private String codigo_canjeo;
+     private String ruta_imagen;
 
-    public Tarjeta(int id_tarjeta, String nombre, String categoria, double precio, int unidades_disponibles, boolean descuento, String codigo_canjeo) {
+    public Tarjeta(int id_tarjeta, String nombre, String categoria, double precio, int unidades_disponibles, boolean descuento, String codigo_canjeo,String ruta_imagen) {
         this.id_tarjeta = id_tarjeta;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -22,6 +23,7 @@ public class Tarjeta {
         this.unidades_disponibles = unidades_disponibles;
         this.descuento = descuento;
         this.codigo_canjeo = codigo_canjeo;
+        this.ruta_imagen = ruta_imagen;
     }
 
     public int getId_tarjeta() {
@@ -80,8 +82,18 @@ public class Tarjeta {
         this.codigo_canjeo = codigo_canjeo;
     }
 
+    public String getRuta_imagen() {
+        return ruta_imagen;
+    }
+
+    public void setRuta_imagen(String ruta_imagen) {
+        this.ruta_imagen = ruta_imagen;
+    }
+
     @Override
     public String toString() {
-        return "Tarjeta{" + "id_tarjeta=" + id_tarjeta + ", nombre=" + nombre + ", categoria=" + categoria + ", precio=" + precio + ", unidades_disponibles=" + unidades_disponibles + ", descuento=" + descuento + ", codigo_canjeo=" + codigo_canjeo + '}';
+        return "Tarjeta{" + "id_tarjeta=" + id_tarjeta + ", nombre=" + nombre + ", categoria=" + categoria + ", precio=" + precio + ", unidades_disponibles=" + unidades_disponibles + ", descuento=" + descuento + ", codigo_canjeo=" + codigo_canjeo + ", ruta_imagen=" + ruta_imagen + '}';
     }
+
+   
 }

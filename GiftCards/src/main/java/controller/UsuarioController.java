@@ -9,10 +9,10 @@ import connection.DBConnection;
 public class UsuarioController implements IUsuarioController {
 
     @Override
-    public String login(String username, String contrasena,String cargo) {
+    public String login(String username, String contrasena, String cargo) {
         Gson gson = new Gson();
         DBConnection con = new DBConnection();
-        String sql = "SELECT * FROM usuario WHERE username = '" + username + "'AND contrasena = '" + contrasena + "' AND cargo='"+cargo+"';";
+        String sql = "SELECT * FROM usuario WHERE username = '" + username + "'AND contrasena = '" + contrasena + "' AND cargo='" + cargo + "';";
         try {
             Statement st = con.getConnection().createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -22,7 +22,7 @@ public class UsuarioController implements IUsuarioController {
                 String apellido = rs.getString("apellido");
                 String email = rs.getString("email");
                 double saldo = rs.getDouble("saldo");
-                
+
                 Usuario usuario = new Usuario(username, contrasena, nombre, apellido, email, saldo, cargo);
 
                 return gson.toJson(usuario);
@@ -35,9 +35,9 @@ public class UsuarioController implements IUsuarioController {
         }
         return "false";
     }
-    
-    @Override 
-    public String register(String username, String contrasena, String nombre, String apellido, String email, double saldo, String cargo){
+
+    @Override
+    public String register(String username, String contrasena, String nombre, String apellido, String email, double saldo, String cargo) {
         Gson gson = new Gson();
         DBConnection con = new DBConnection();
         String sql = "INSERT INTO usuario VALUES('" + username + "','" + contrasena + "','" + nombre + "','" + apellido + "','" + email + "'," + saldo + ",'" + cargo + "');";
@@ -52,8 +52,39 @@ public class UsuarioController implements IUsuarioController {
         } finally {
             con.desconectar();
         }
-        
-                
+
         return "false";
     }
+
+    @Override
+    public String pedir(String username) {
+
+        Gson gson = new Gson();
+        DBConnection con = new DBConnection();
+        String sql = "SELECT * FROM usuario WHERE username = '" + username + "'";
+        try {
+            Statement st = con.getConnection().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                String contrasena = rs.getString("contrasena");
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+                String email = rs.getString("email");
+                double saldo = rs.getDouble("saldo");
+                String cargo = rs.getString("cargo");
+
+                Usuario usuario = new Usuario(username, contrasena, nombre, apellido, email, saldo, cargo);
+
+                return gson.toJson(usuario);
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            con.desconectar();
+        }
+
+        return "false";
+    }
+
 }
