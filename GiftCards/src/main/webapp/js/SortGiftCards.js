@@ -37,9 +37,9 @@ const sortGiftCards = (tarjetas) => {
         
         giftCardHTML += `
             <article class="mt-12 mx-auto hover:scale-105">
-                <button id="${tarjeta.categoria} onclick="location.href='';"">
-                    <img src="${tarjeta.ruta_imagen}" alt="Logo de la categoria" id="categorieLogo"
-                    class="w-56 h-36 rounded-2xl object-cover "/>
+                <button id="${tarjeta.categoria}" onclick="location.href='';">
+                    <img src="${tarjeta.ruta_imagen}" alt="Imagen de la tarjeta" id="giftCardImage"
+                    class="w-56 h-36 rounded-2xl object-cover" />
                 </button>
                 <h2 class="mt-2 text-lg text-center text-slate-200"> ${tarjeta.nombre} </h2>
             </article>
