@@ -17,7 +17,7 @@ const sortCategories = () => {
             <article class="mt-12 mx-auto hover:scale-105">
                 <button id='${key}' onclick='paginaCategoria(this)'>
                     <img src="${categories[key]}" alt="Logo de la categoria" id="categorieLogo"
-                    class="w-56 h-36 rounded-2xl object-cover "/>
+                    class="w-56 h-36 rounded-2xl object-cover" />
                 </button>
                 <h2 class="mt-2 text-lg text-center text-slate-200"> ${key} </h2>
             </article>
